@@ -1,0 +1,6 @@
+<h2>About</h2>
+{{#each model as |bookmark|}}
+  <article id={{bookmark.id}}>
+    {{bookmark.title}} - {{bookmark.about}}
+  </article>
+{{/each}}
