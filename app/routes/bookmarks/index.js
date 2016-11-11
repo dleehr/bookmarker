@@ -5,6 +5,6 @@ export default Ember.Route.extend({
     return this.get('store').findAll('bookmark');
   },
   renderTemplate() {
-    this.render('about')
+    this.render('about');
   }
 });
