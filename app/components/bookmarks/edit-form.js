@@ -10,7 +10,7 @@ export default Ember.Component.extend({
       .then(
         (value) => {
           Ember.Logger.info(value);
-          this.get('router').transitionTo('bookmarks');
+          this.gotoList();
         }
       ).catch(
         () => {
@@ -21,7 +21,11 @@ export default Ember.Component.extend({
     cancel() { Ember.Logger.info('cancel called'); },
     delete(bookmark) {
        bookmark.destroyRecord();
-       this.get('router').transitionTo('bookmarks');
+       this.gotoList();
     }
+  },
+  gotoList() {
+   this.get('router').transitionTo('bookmarks');
   }
+
 });
