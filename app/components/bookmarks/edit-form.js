@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  bookmark: null,
+  bookmark: null, // This doesn't matter yet!
   router: Ember.inject.service('-routing'),
   actions: {
     save(bookmark) {
