@@ -9,16 +9,19 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{users-list}}`);
+  this.render(hbs`{{users-list fake-url sample-email}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  // THIS is the DOM element for the component. Then we use jQuery to get
+  // other stuff
+  assert.equal(this.$('img').attr('class'), 'avatar');
 
   // Template block usage:
   this.render(hbs`
-    {{#users-list}}
+    {{#users-list fake-url sample-email}}
       template block text
     {{/users-list}}
   `);
 
   assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$('img').attr('class'), 'avatar');
 });
